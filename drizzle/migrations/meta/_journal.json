@@ -1,5 +1,20 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792928922511,
+      "tag": "0000_create_shared_items_and_views",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792928934962,
+      "tag": "0001_add_geo_columns",
+      "breakpoints": true
+    }
+  ]
 }

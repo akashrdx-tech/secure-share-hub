@@ -14,7 +14,95 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      item_views: {
+        Row: {
+          city: string | null
+          country: string | null
+          id: string
+          ip_address: string | null
+          item_id: string
+          latitude: number | null
+          longitude: number | null
+          opened_at: string
+          region: string | null
+          timezone: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          city?: string | null
+          country?: string | null
+          id?: string
+          ip_address?: string | null
+          item_id: string
+          latitude?: number | null
+          longitude?: number | null
+          opened_at?: string
+          region?: string | null
+          timezone?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          city?: string | null
+          country?: string | null
+          id?: string
+          ip_address?: string | null
+          item_id?: string
+          latitude?: number | null
+          longitude?: number | null
+          opened_at?: string
+          region?: string | null
+          timezone?: string | null
+          user_agent?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "item_views_item_id_fkey"
+            columns: ["item_id"]
+            isOneToOne: false
+            referencedRelation: "shared_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      shared_items: {
+        Row: {
+          created_at: string
+          file_name: string | null
+          file_size: number | null
+          id: string
+          kind: string
+          mime_type: string | null
+          storage_path: string | null
+          text_content: string | null
+          title: string | null
+          token: string
+        }
+        Insert: {
+          created_at?: string
+          file_name?: string | null
+          file_size?: number | null
+          id?: string
+          kind: string
+          mime_type?: string | null
+          storage_path?: string | null
+          text_content?: string | null
+          title?: string | null
+          token: string
+        }
+        Update: {
+          created_at?: string
+          file_name?: string | null
+          file_size?: number | null
+          id?: string
+          kind?: string
+          mime_type?: string | null
+          storage_path?: string | null
+          text_content?: string | null
+          title?: string | null
+          token?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
